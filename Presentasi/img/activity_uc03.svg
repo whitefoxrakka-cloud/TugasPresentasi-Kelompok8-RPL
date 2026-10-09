@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="1520" viewBox="0 0 1240 1520" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1240" height="1520" fill="#ffffff"/>
+  <defs>
+    <marker id="arw" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#0f2743"/>
+    </marker>
+  </defs>
+
+  <text x="620" y="36" text-anchor="middle" font-size="26" font-weight="700" fill="#0f2743">Activity Diagram &#8212; UC-03 Mendiagnosis dan Menyusun Estimasi</text>
+
+  <g stroke="#0f2743" stroke-width="2.5" marker-end="url(#arw)">
+    <line x1="420" y1="92" x2="420" y2="118"/>
+    <line x1="420" y1="184" x2="420" y2="218"/>
+    <line x1="420" y1="284" x2="420" y2="318"/>
+    <line x1="420" y1="384" x2="420" y2="418"/>
+    <line x1="420" y1="484" x2="420" y2="508"/>
+    <line x1="420" y1="670" x2="420" y2="716"/>
+    <line x1="420" y1="784" x2="420" y2="818"/>
+    <line x1="420" y1="818" x2="420" y2="866"/>
+    <line x1="420" y1="930" x2="420" y2="966"/>
+    <line x1="420" y1="1030" x2="420" y2="1066"/>
+    <line x1="420" y1="1130" x2="420" y2="1166"/>
+    <line x1="420" y1="1230" x2="420" y2="1266"/>
+    <line x1="420" y1="1330" x2="420" y2="1370"/>
+  </g>
+  <!-- branch no -->
+  <g stroke="#0f2743" stroke-width="2.5" fill="none">
+    <line x1="630" y1="580" x2="760" y2="580" marker-end="url(#arw)"/>
+    <line x1="760" y1="580" x2="760" y2="716" marker-end="url(#arw)"/>
+    <line x1="760" y1="780" x2="760" y2="840"/>
+    <line x1="760" y1="840" x2="420" y2="840" marker-end="url(#arw)"/>
+  </g>
+
+  <circle cx="420" cy="70" r="22" fill="#0f2743"/>
+
+  <g text-anchor="middle" font-size="18" fill="#152031">
+    <rect x="230" y="120" width="380" height="64" rx="12" fill="#eaf2fb" stroke="#1f5fa8"/>
+    <text x="420" y="150">Teknisi buka daftar tugas</text>
+    <text x="420" y="172">dan memilih tiket</text>
+
+    <rect x="230" y="220" width="380" height="64" rx="12" fill="#eaf2fb" stroke="#1f5fa8"/>
+    <text x="420" y="250">Sistem menampilkan</text>
+    <text x="420" y="272">detail tiket dan perangkat</text>
+
+    <rect x="230" y="320" width="380" height="64" rx="12" fill="#eaf2fb" stroke="#1f5fa8"/>
+    <text x="420" y="350">Teknisi mengisi hasil</text>
+    <text x="420" y="372">diagnosis kerusakan</text>
+
+    <rect x="230" y="420" width="380" height="64" rx="12" fill="#eaf2fb" stroke="#1f5fa8"/>
+    <text x="420" y="462">Sistem mengubah status tiket: Didiagnosis</text>
+  </g>
+
+  <!-- decision -->
+  <polygon points="420,508 640,580 420,652 200,580" fill="#fff3e0" stroke="#e8890c" stroke-width="2.5"/>
+  <text x="420" y="574" text-anchor="middle" font-size="18" fill="#152031">Stok suku cadang</text>
+  <text x="420" y="596" text-anchor="middle" font-size="18" fill="#152031">tersedia?</text>
+
+  <g text-anchor="middle" font-size="18" fill="#152031">
+    <rect x="230" y="716" width="380" height="64" rx="12" fill="#eaf2fb" stroke="#1f5fa8"/>
+    <text x="420" y="746">Sistem mengambil tarif resmi</text>
+    <text x="420" y="768">dan ketersediaan stok</text>
+
+    <rect x="570" y="716" width="380" height="64" rx="12" fill="#fdecea" stroke="#c0392b"/>
+    <text x="760" y="746">Tampilkan stok cabang lain /</text>
+    <text x="760" y="768">peringatan Staf Gudang (UC-08)</text>
+  </g>
+
+  <g text-anchor="middle" font-size="18" fill="#152031">
+    <rect x="230" y="866" width="380" height="64" rx="12" fill="#eaf2fb" stroke="#1f5fa8"/>
+    <text x="420" y="896">Sistem menghitung estimasi</text>
+    <text x="420" y="918">(biaya jasa + suku cadang)</text>
+
+    <rect x="230" y="966" width="380" height="64" rx="12" fill="#eaf2fb" stroke="#1f5fa8"/>
+    <text x="420" y="1008">Teknisi memeriksa dan mengirim estimasi</text>
+
+    <rect x="230" y="1066" width="380" height="64" rx="12" fill="#eaf2fb" stroke="#1f5fa8"/>
+    <text x="420" y="1108">Status tiket: Menunggu Persetujuan</text>
+
+    <rect x="230" y="1166" width="380" height="64" rx="12" fill="#eaf2fb" stroke="#1f5fa8"/>
+    <text x="420" y="1208">Sistem mengirim notifikasi ke pelanggan (UC-12)</text>
+
+    <rect x="230" y="1266" width="380" height="64" rx="12" fill="#eaf2fb" stroke="#1f5fa8"/>
+    <text x="420" y="1308">Catat log &amp; tampilkan konfirmasi ke teknisi</text>
+  </g>
+
+  <!-- labels -->
+  <text x="440" y="700" font-size="17" font-weight="700" fill="#2e7d32">Ya</text>
+  <text x="648" y="572" font-size="17" font-weight="700" fill="#c0392b">Tidak</text>
+
+  <!-- end -->
+  <circle cx="420" cy="1394" r="24" fill="none" stroke="#0f2743" stroke-width="3"/>
+  <circle cx="420" cy="1394" r="14" fill="#0f2743"/>
+</svg>

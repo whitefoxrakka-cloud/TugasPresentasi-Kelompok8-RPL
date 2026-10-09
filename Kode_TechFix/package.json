@@ -1,0 +1,25 @@
+{
+  "name": "techfix-service",
+  "version": "1.0.0",
+  "description": "Skeleton dasar sistem manajemen servis gadget TechFix (2 cabang di Semarang).",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "techfix",
+    "servis",
+    "gadget",
+    "express",
+    "mysql"
+  ],
+  "author": "Mahasiswa Rekayasa Perangkat Lunak",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "ejs": "^3.1.10",
+    "mysql2": "^3.11.0",
+    "dotenv": "^16.4.5"
+  }
+}

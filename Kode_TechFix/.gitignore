@@ -1,0 +1,15 @@
+# Dependensi
+node_modules/
+
+# Variabel lingkungan (jangan di-commit)
+.env
+
+# Log
+npm-debug.log*
+*.log
+
+# Berkas sistem / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

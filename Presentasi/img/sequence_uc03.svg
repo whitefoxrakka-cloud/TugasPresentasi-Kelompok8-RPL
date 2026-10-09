@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1180" viewBox="0 0 1500 1180" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1500" height="1180" fill="#ffffff"/>
+  <defs>
+    <marker id="mSync" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#0f2743"/>
+    </marker>
+    <marker id="mOpen" markerWidth="13" markerHeight="13" refX="11" refY="6.5" orient="auto">
+      <path d="M0,0 L13,6.5 L0,13" fill="none" stroke="#0f2743" stroke-width="2"/>
+    </marker>
+    <marker id="mRet" markerWidth="13" markerHeight="13" refX="11" refY="6.5" orient="auto">
+      <path d="M0,0 L13,6.5 L0,13" fill="none" stroke="#8a4b08" stroke-width="2"/>
+    </marker>
+  </defs>
+
+  <text x="750" y="34" text-anchor="middle" font-size="26" font-weight="700" fill="#0f2743">Sequence Diagram &#8212; UC-03 Mendiagnosis dan Menyusun Estimasi</text>
+
+  <!-- lifelines -->
+  <g stroke="#9fb3cb" stroke-width="1.6" stroke-dasharray="7 7">
+    <line x1="170" y1="110" x2="170" y2="1120"/>
+    <line x1="560" y1="110" x2="560" y2="1120"/>
+    <line x1="950" y1="110" x2="950" y2="1120"/>
+    <line x1="1300" y1="110" x2="1300" y2="1120"/>
+  </g>
+
+  <!-- activation bars -->
+  <rect x="158" y="150" width="24" height="120" fill="#dfe9f6" stroke="#1f5fa8"/>
+  <rect x="158" y="300" width="24" height="90" fill="#dfe9f6" stroke="#1f5fa8"/>
+  <rect x="158" y="690" width="24" height="90" fill="#dfe9f6" stroke="#1f5fa8"/>
+  <rect x="548" y="160" width="24" height="900" fill="#e7eefb" stroke="#1f5fa8"/>
+  <rect x="938" y="390" width="24" height="80" fill="#dfe9f6" stroke="#1f5fa8"/>
+
+  <!-- alt fragment -->
+  <rect x="205" y="372" width="900" height="300" fill="none" stroke="#5b6b80" stroke-width="1.6" stroke-dasharray="6 5"/>
+  <path d="M205,372 h70 l14,20 h-84 z" fill="#eef3f9" stroke="#5b6b80" stroke-width="1.4"/>
+  <text x="243" y="388" text-anchor="middle" font-size="17" font-weight="700" fill="#0f2743">alt</text>
+  <line x1="205" y1="470" x2="1105" y2="470" stroke="#5b6b80" stroke-width="1.2" stroke-dasharray="6 5"/>
+  <text x="216" y="395" font-size="15" fill="#5b6b80">[stok tersedia]</text>
+  <text x="216" y="492" font-size="15" fill="#5b6b80">[stok kosong / cabang lain]</text>
+
+  <!-- header boxes -->
+  <g font-size="19" font-weight="700" fill="#0f2743" text-anchor="middle">
+    <rect x="70" y="56" width="200" height="54" rx="7" fill="#eaf2fb" stroke="#1f5fa8"/>
+    <text x="170" y="90">Teknisi</text>
+
+    <rect x="460" y="56" width="200" height="54" rx="7" fill="#eaf2fb" stroke="#1f5fa8"/>
+    <text x="560" y="90">:Sistem</text>
+
+    <rect x="850" y="56" width="200" height="54" rx="7" fill="#eaf2fb" stroke="#1f5fa8"/>
+    <text x="950" y="90">:Database</text>
+
+    <rect x="1150" y="56" width="300" height="54" rx="7" fill="#eaf2fb" stroke="#1f5fa8"/>
+    <text x="1300" y="90">Layanan Notifikasi</text>
+  </g>
+
+  <!-- messages -->
+  <g font-size="18" fill="#152031">
+    <!-- 1 -->
+    <text x="365" y="164" text-anchor="middle">1: bukaDaftarTugas()</text>
+    <line x1="170" y1="170" x2="552" y2="170" stroke="#0f2743" stroke-width="2.5" marker-end="url(#mSync)"/>
+    <!-- 2 -->
+    <text x="365" y="229" text-anchor="middle" fill="#8a4b08">2: tampilkanDetailTiket()</text>
+    <line x1="560" y1="235" x2="182" y2="235" stroke="#8a4b08" stroke-width="2" stroke-dasharray="7 4" marker-end="url(#mRet)"/>
+    <!-- 3 -->
+    <text x="365" y="314" text-anchor="middle">3: simpanHasilDiagnosis()</text>
+    <line x1="170" y1="320" x2="552" y2="320" stroke="#0f2743" stroke-width="2.5" marker-end="url(#mSync)"/>
+    <!-- 4 -->
+    <text x="755" y="399" text-anchor="middle">4: ambilTarifDanStok()</text>
+    <line x1="560" y1="405" x2="942" y2="405" stroke="#0f2743" stroke-width="2.5" marker-end="url(#mSync)"/>
+    <!-- 5 -->
+    <text x="755" y="454" text-anchor="middle" fill="#8a4b08">5: dataTarifDanStok</text>
+    <line x1="950" y1="460" x2="572" y2="460" stroke="#8a4b08" stroke-width="2" stroke-dasharray="7 4" marker-end="url(#mRet)"/>
+    <!-- 6 self -->
+    <text x="650" y="524" text-anchor="middle">6: hitungEstimasi()</text>
+    <path d="M572,540 h66 v22 h-66" fill="none" stroke="#0f2743" stroke-width="2.5" marker-end="url(#mSync)"/>
+    <!-- 7 -->
+    <text x="365" y="624" text-anchor="middle" fill="#8a4b08">7: tampilkanEstimasi()</text>
+    <line x1="560" y1="630" x2="182" y2="630" stroke="#8a4b08" stroke-width="2" stroke-dasharray="7 4" marker-end="url(#mRet)"/>
+    <!-- 8 -->
+    <text x="365" y="709" text-anchor="middle">8: kirimEstimasi()</text>
+    <line x1="170" y1="715" x2="552" y2="715" stroke="#0f2743" stroke-width="2.5" marker-end="url(#mSync)"/>
+    <!-- 9 async -->
+    <text x="930" y="799" text-anchor="middle">9: kirimNotifikasiEstimasi()</text>
+    <line x1="560" y1="805" x2="1292" y2="805" stroke="#0f2743" stroke-width="2.5" marker-end="url(#mOpen)"/>
+    <text x="930" y="828" text-anchor="middle" font-size="15" fill="#5b6b80">asynchronous</text>
+    <!-- 10 -->
+    <text x="365" y="884" text-anchor="middle" fill="#8a4b08">10: konfirmasiEstimasiTerkirim()</text>
+    <line x1="560" y1="890" x2="182" y2="890" stroke="#8a4b08" stroke-width="2" stroke-dasharray="7 4" marker-end="url(#mRet)"/>
+  </g>
+
+  <!-- legend -->
+  <g font-size="16" fill="#152031">
+    <rect x="120" y="990" width="1260" height="88" rx="10" fill="#f6faff" stroke="#c9d8ea"/>
+    <line x1="150" y1="1022" x2="230" y2="1022" stroke="#0f2743" stroke-width="2.5" marker-end="url(#mSync)"/>
+    <text x="244" y="1028">Synchronous (pesan utama)</text>
+    <line x1="470" y1="1022" x2="550" y2="1022" stroke="#8a4b08" stroke-width="2" stroke-dasharray="7 4" marker-end="url(#mRet)"/>
+    <text x="564" y="1028">Return (kembalian)</text>
+    <line x1="760" y1="1022" x2="840" y2="1022" stroke="#0f2743" stroke-width="2.5" marker-end="url(#mOpen)"/>
+    <text x="854" y="1028">Asynchronous (notifikasi)</text>
+    <text x="150" y="1062" font-size="15" fill="#5b6b80">Actor: Teknisi &#183; Lifeline: Sistem, Database, Layanan Notifikasi &#183; Fragment: alt (stok tersedia / tidak tersedia)</text>
+  </g>
+</svg>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Slide Presentasi TechFix - Kelompok 8</title>
+<style>
+  :root{
+    --navy:#0f2743; --blue:#1f5fa8; --sky:#eaf2fb; --accent:#e8890c;
+    --line:#c9d8ea; --ink:#152031; --muted:#5b6b80;
+  }
+  *{box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  html,body{margin:0; padding:0; background:#fff; color:var(--ink);
+    font-family:"Segoe UI",Arial,Helvetica,sans-serif;}
+  .slide{
+    width:1280px; height:720px; position:relative; overflow:hidden;
+    background:#fff; page-break-after:always; break-after:page;
+    padding:46px 60px 54px 60px; border-bottom:1px solid #eee;
+  }
+  .slide:last-child{page-break-after:auto;}
+  .s-head{display:flex; align-items:baseline; gap:14px; border-bottom:3px solid var(--blue); padding-bottom:10px; margin-bottom:22px;}
+  .s-head .kicker{background:var(--navy); color:#fff; font-size:15px; font-weight:700; letter-spacing:.5px;
+    padding:4px 12px; border-radius:4px; white-space:nowrap;}
+  .s-head h2{margin:0; font-size:34px; color:var(--navy); font-weight:800;}
+  .lead{font-size:21px; line-height:1.5; color:var(--ink);}
+  .muted{color:var(--muted);}
+  ul{margin:8px 0 0 0; padding-left:26px;}
+  li{font-size:20px; line-height:1.55; margin-bottom:8px;}
+  .cols{display:flex; gap:26px;}
+  .col{flex:1;}
+  .card{background:var(--sky); border:1px solid var(--line); border-radius:12px; padding:18px 20px;}
+  .card h3{margin:0 0 8px 0; font-size:21px; color:var(--blue);}
+  .card p, .card li{font-size:18px; line-height:1.45;}
+  .stats{display:flex; gap:18px; margin:14px 0;}
+  .stat{flex:1; background:var(--navy); color:#fff; border-radius:12px; padding:16px 18px; text-align:center;}
+  .stat .n{font-size:42px; font-weight:800; line-height:1;}
+  .stat .l{font-size:16px; opacity:.9; margin-top:6px;}
+  .stat.alt{background:var(--blue);}
+  .stat.acc{background:var(--accent);}
+  table{width:100%; border-collapse:collapse; margin-top:8px;}
+  th,td{border:1px solid var(--line); padding:8px 10px; font-size:16.5px; text-align:left; vertical-align:top;}
+  th{background:var(--navy); color:#fff; font-weight:700;}
+  tr:nth-child(even) td{background:#f6faff;}
+  .imgwrap{display:flex; align-items:center; justify-content:center;}
+  .imgwrap img{max-width:100%; max-height:100%; border:1px solid var(--line); border-radius:8px; background:#fff;}
+  .footer{position:absolute; left:60px; right:60px; bottom:16px; border-top:1px solid var(--line);
+    padding-top:8px; font-size:14px; color:var(--muted); display:flex; justify-content:space-between;}
+  .tag{display:inline-block; background:var(--sky); border:1px solid var(--line); border-radius:999px;
+    padding:3px 12px; font-size:15px; margin:3px 4px 3px 0; color:var(--blue); font-weight:600;}
+  /* cover */
+  .cover{background:linear-gradient(135deg,#0f2743 0%,#1f5fa8 100%); color:#fff; padding:0;}
+  .cover .inner{position:absolute; inset:0; padding:56px 70px; display:flex; flex-direction:column;}
+  .cover .top{display:flex; align-items:center; gap:22px;}
+  .cover img{width:104px; height:104px; background:#fff; border-radius:14px; padding:8px;}
+  .cover .uni{font-size:18px; line-height:1.35; opacity:.95;}
+  .cover h1{font-size:52px; margin:26px 0 4px 0; font-weight:800; line-height:1.08;}
+  .cover h1 span{color:#ffd27a;}
+  .cover .sub{font-size:23px; opacity:.95; margin-bottom:22px;}
+  .cover .members{display:flex; gap:14px; flex-wrap:wrap; margin-top:6px;}
+  .cover .m{background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.28); border-radius:10px; padding:10px 14px;}
+  .cover .m b{display:block; font-size:18px;}
+  .cover .m i{font-style:normal; font-size:15px; opacity:.85;}
+  .cover .bottom{margin-top:auto; font-size:16px; opacity:.9; border-top:1px solid rgba(255,255,255,.25); padding-top:12px;}
+  .flow{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:16px;}
+  .flow .step{background:var(--sky); border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-size:16px; font-weight:600; color:var(--navy); flex:1; text-align:center; min-width:150px;}
+  .flow .arw{color:var(--blue); font-size:24px; font-weight:800;}
+  @page{ size:1290px 730px; margin:0; }
+  @media print{ .slide{ border-bottom:0; } }
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="slide cover">
+  <div class="inner">
+    <div class="top">
+      <img src="img/image1.png" alt="Logo">
+      <div class="uni">
+        <b>UIN K.H. Abdurrahman Wahid Pekalongan</b><br>
+        Fakultas Sains dan Teknologi &mdash; Program Studi Sains Data<br>
+        Mata Kuliah Rekayasa Perangkat Lunak (SSD1030) &mdash; Kelas A
+      </div>
+    </div>
+    <h1>Sistem Manajemen Servis<br>Gadget <span>TechFix</span></h1>
+    <div class="sub">Analisis, Perancangan UML, dan Rencana Implementasi</div>
+    <div class="members">
+      <div class="m"><b>Aninda Rizqi Amelia</b><i>60124009</i></div>
+      <div class="m"><b>Maheswari Pasa Putri Syamsudar</b><i>60124010</i></div>
+      <div class="m"><b>Hasan</b><i>60124013</i></div>
+      <div class="m"><b>Sifa Sabrina</b><i>60124023</i></div>
+    </div>
+    <div class="bottom">
+      Kelompok 8 &nbsp;|&nbsp; Dosen Pengampu: Muhammad Soleh, S.Kom., M.T. &nbsp;|&nbsp; Tugas Presentasi Pertemuan 6
+    </div>
+  </div>
+</section>
+
+<!-- 2 LATAR BELAKANG -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB I</span><h2>Latar Belakang &amp; Masalah</h2></div>
+  <p class="lead">TechFix Semarang adalah pusat servis gadget (sejak 2018) dengan <b>2 cabang</b>, melayani smartphone, tablet, laptop, dan smartwatch &mdash; <b>40&ndash;60 unit masuk per hari</b>. Pencatatan masih manual (nota kertas &amp; Excel terpisah).</p>
+  <div class="stats">
+    <div class="stat"><div class="n">2</div><div class="l">Cabang di Semarang</div></div>
+    <div class="stat alt"><div class="n">40&ndash;60</div><div class="l">Unit masuk / hari</div></div>
+    <div class="stat acc"><div class="n">~100</div><div class="l">Transaksi &amp; update / hari</div></div>
+  </div>
+  <div class="cols">
+    <div class="col card">
+      <h3>Masalah utama</h3>
+      <ul>
+        <li>Nota servis sering hilang / tidak terbaca &rarr; sengketa saat pengambilan unit.</li>
+        <li>Pelanggan harus menelepon/datang untuk cek status.</li>
+        <li>Stok menumpuk di satu cabang, habis di cabang lain.</li>
+      </ul>
+    </div>
+    <div class="col card">
+      <h3>Dampak</h3>
+      <ul>
+        <li>Estimasi lisan berbeda dengan tagihan akhir.</li>
+        <li>Garansi sulit dilacak.</li>
+        <li>Laporan bulanan harus direkap manual &rarr; lambat.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>Kelompok 8 &mdash; Sistem Manajemen Servis Gadget TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 3 TUJUAN & RUANG LINGKUP -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB I</span><h2>Tujuan &amp; Ruang Lingkup</h2></div>
+  <div class="cols">
+    <div class="col card">
+      <h3>Tujuan Sistem</h3>
+      <p>Membangun sistem manajemen servis gadget yang <b>terintegrasi dan terpusat</b> untuk meningkatkan efisiensi operasional, transparansi layanan, dan kepuasan pelanggan di kedua cabang TechFix Semarang.</p>
+    </div>
+    <div class="col card">
+      <h3>Ruang Lingkup</h3>
+      <p>Sistem <b>berbasis web</b> (responsif) yang mencakup: penerimaan unit, diagnosis &amp; estimasi biaya, penugasan teknisi, pengelolaan stok, pembayaran, garansi, notifikasi, hingga dashboard &amp; laporan lintas cabang.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <h3>Target keberhasilan</h3>
+    <p>
+      <span class="tag">Telepon cek status &minus;60%</span>
+      <span class="tag">Servis tertunda akibat stok kosong &minus;70%</span>
+      <span class="tag">Waktu pengerjaan servis &minus;25%</span>
+      <span class="tag">Respons maksimal 3 detik</span>
+    </p>
+  </div>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 4 ALUR PENGERJAAN -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">ALUR</span><h2>Alur Pengerjaan (8 Poin Tugas)</h2></div>
+  <p class="lead">Tugas dikerjakan berurutan: dari studi kasus, kebutuhan, pemodelan UML, sampai rencana implementasi dan presentasi.</p>
+  <div class="flow">
+    <div class="step">1. Tema &amp;<br>Studi Kasus</div><div class="arw">&rarr;</div>
+    <div class="step">2. SRS<br>(FR &amp; NFR)</div><div class="arw">&rarr;</div>
+    <div class="step">3. Use Case<br>Diagram</div><div class="arw">&rarr;</div>
+    <div class="step">4. Use Case<br>Specification</div>
+  </div>
+  <div class="flow">
+    <div class="step">5. Class<br>Diagram</div><div class="arw">&rarr;</div>
+    <div class="step">6. Sequence<br>Diagram</div><div class="arw">&rarr;</div>
+    <div class="step">7. Rencana<br>Implementasi</div><div class="arw">&rarr;</div>
+    <div class="step">8. Presentasi<br>+ Repo GitHub</div>
+  </div>
+  <div class="card" style="margin-top:22px">
+    <p>Setiap diagram dibuat dari kebutuhan pada SRS (<b>traceability</b>) sehingga use case, class, dan sequence saling konsisten: <b>12 FR &rarr; 17 use case &rarr; 13 class &rarr; sequence UC-03</b>.</p>
+  </div>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 5 SRS -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB II</span><h2>Software Requirements Specification</h2></div>
+  <div class="stats">
+    <div class="stat"><div class="n">9</div><div class="l">Aktor (6 primer, 3 sekunder)</div></div>
+    <div class="stat alt"><div class="n">12</div><div class="l">Kebutuhan Fungsional</div></div>
+    <div class="stat acc"><div class="n">9</div><div class="l">Kebutuhan Non-fungsional</div></div>
+  </div>
+  <div class="cols">
+    <div class="col card">
+      <h3>Aktor</h3>
+      <p><b>Primer:</b> Pelanggan, Staf Front Desk, Teknisi, Staf Gudang, Kepala Cabang, Pemilik/Admin.<br>
+      <b>Sekunder:</b> Pemasok, Payment Gateway, Layanan WhatsApp/SMS/Email.</p>
+    </div>
+    <div class="col card">
+      <h3>Contoh kebutuhan</h3>
+      <p><b>FR-03</b> Diagnosis &amp; estimasi biaya &middot; <b>FR-05</b> Manajemen stok &middot; <b>FR-09</b> Notifikasi otomatis.<br>
+      <b>NFR-01</b> Respons &le; 3 detik &middot; <b>NFR-02</b> RBAC &amp; HTTPS &middot; <b>NFR-07</b> Keandalan data.</p>
+    </div>
+  </div>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 6 USE CASE DIAGRAM -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB III</span><h2>Use Case Diagram</h2></div>
+  <div class="cols" style="height:500px">
+    <div class="col imgwrap" style="flex:1.15"><img src="img/image2.jpeg" alt="Use Case Diagram"></div>
+    <div class="col" style="flex:1">
+      <div class="card">
+        <h3>17 use case &middot; 9 aktor</h3>
+        <ul>
+          <li><b>Include:</b> UC-01&rarr;UC-12, UC-03&rarr;UC-12, UC-06&rarr;UC-12, UC-10&rarr;UC-09, UC-11&rarr;UC-16.</li>
+          <li><b>Extend:</b> UC-17&rarr;UC-09, UC-17&rarr;UC-11, UC-08&rarr;UC-07.</li>
+          <li><b>Pewarisan aktif:</b> Pemilik Usaha mewarisi peran Kepala Cabang.</li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <p>Use case utama yang dipilih untuk dijabarkan: <b>UC-03 Mendiagnosis dan Menyusun Estimasi</b> (FR-03, FR-05, FR-09).</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 7 UC-03 SPEC -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB III</span><h2>Use Case Specification: UC-03</h2></div>
+  <p class="lead">Teknisi mencatat hasil diagnosis, menyusun estimasi dari tarif resmi &amp; stok, lalu sistem mengirim estimasi ke pelanggan.</p>
+  <div class="cols">
+    <div class="col card">
+      <h3>Skenario utama (11 langkah)</h3>
+      <ul>
+        <li>Teknisi buka daftar tugas &amp; pilih tiket; sistem tampilkan detail unit.</li>
+        <li>Teknisi isi hasil diagnosis &rarr; status <b>"Didiagnosis"</b>.</li>
+        <li>Sistem ambil tarif resmi + stok, hitung total biaya.</li>
+        <li>Teknisi kirim estimasi &rarr; status <b>"Menunggu Persetujuan"</b>.</li>
+        <li>Sistem kirim notifikasi ke pelanggan (UC-12).</li>
+      </ul>
+    </div>
+    <div class="col card">
+      <h3>Prakondisi &amp; alternatif</h3>
+      <p><b>Prakondisi:</b> teknisi login &amp; terautentikasi; tiket sudah dibuat (UC-01) dan ditugaskan (UC-05).</p>
+      <p><b>8 skenario alternatif (A1&ndash;A8):</b> akses tiket bukan miliknya, perangkat tidak bisa diperbaiki, tarif belum ada, stok kosong, estimasi revisi, koneksi terputus, pembatalan, notifikasi gagal.</p>
+    </div>
+  </div>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 8 CLASS DIAGRAM -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB IV</span><h2>Class Diagram</h2></div>
+  <div class="cols" style="height:500px">
+    <div class="col imgwrap" style="flex:1.2"><img src="img/image3.jpeg" alt="Class Diagram"></div>
+    <div class="col" style="flex:1">
+      <div class="stats" style="flex-direction:column">
+        <div class="stat"><div class="n">13</div><div class="l">Class</div></div>
+        <div class="stat alt"><div class="n">16</div><div class="l">Relasi antar-class</div></div>
+      </div>
+      <div class="card">
+        <h3>Jenis hubungan</h3>
+        <p><b>Generalization</b> (Pengguna&rarr;Pelanggan, Pengguna&rarr;Teknisi) &middot; <b>Association</b> &middot; <b>Aggregation</b> (Cabang&ndash;Stok, Cabang&ndash;Teknisi) &middot; <b>Composition</b> (TiketServis&ndash;Estimasi, Perangkat&ndash;Garansi).</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 9 SEQUENCE DIAGRAM -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB V</span><h2>Sequence Diagram UC-03</h2></div>
+  <p class="lead">Empat lifeline: <b>Teknisi, Sistem, Database, Layanan Notifikasi</b> &mdash; dihubungkan oleh 10 pesan berurutan waktu.</p>
+  <table>
+    <tr><th style="width:60px">No</th><th>Pengirim &rarr; Penerima</th><th style="width:170px">Jenis</th><th>Message</th></tr>
+    <tr><td>1</td><td>Teknisi &rarr; Sistem</td><td>Synchronous</td><td>bukaDaftarTugas()</td></tr>
+    <tr><td>2</td><td>Sistem &rarr; Teknisi</td><td>Return</td><td>tampilkanDetailTiket()</td></tr>
+    <tr><td>3</td><td>Teknisi &rarr; Sistem</td><td>Synchronous</td><td>simpanHasilDiagnosis()</td></tr>
+    <tr><td>4&ndash;5</td><td>Sistem &harr; Database</td><td>Synchronous / Return</td><td>ambilTarifDanStok() &rarr; dataTarifDanStok</td></tr>
+    <tr><td>6&ndash;7</td><td>Sistem (self) &rarr; Teknisi</td><td>Synchronous / Return</td><td>hitungEstimasi() &rarr; tampilkanEstimasi()</td></tr>
+    <tr><td>8</td><td>Teknisi &rarr; Sistem</td><td>Synchronous</td><td>kirimEstimasi()</td></tr>
+    <tr><td>9</td><td>Sistem &rarr; Layanan Notifikasi</td><td>Asynchronous</td><td>kirimNotifikasiEstimasi()</td></tr>
+    <tr><td>10</td><td>Sistem &rarr; Teknisi</td><td>Return</td><td>konfirmasiEstimasiTerkirim()</td></tr>
+  </table>
+  <p class="muted" style="font-size:17px; margin-top:12px">Fragment <b>alt</b> membedakan stok tersedia/tidak; notifikasi bersifat <b>asynchronous</b> agar proses servis tidak terhambat.</p>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 9b SEQUENCE DIAGRAM - GAMBAR -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB V</span><h2>Sequence Diagram UC-03 &mdash; Gambar</h2></div>
+  <div class="cols" style="height:500px">
+    <div class="col imgwrap" style="flex:2"><img src="img/sequence_uc03.png" alt="Sequence Diagram UC-03"></div>
+    <div class="col" style="flex:1">
+      <div class="card">
+        <h3>Keterangan</h3>
+        <ul>
+          <li>4 lifeline: Teknisi, Sistem, Database, Layanan Notifikasi.</li>
+          <li>10 pesan: synchronous, return, dan asynchronous.</li>
+          <li>Fragment <b>alt</b> untuk stok tersedia / tidak tersedia.</li>
+          <li>Tiap pesan dipetakan ke method class (BAB IV).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 9c ACTIVITY DIAGRAM -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB III</span><h2>Activity Diagram UC-03</h2></div>
+  <div class="cols" style="height:500px">
+    <div class="col imgwrap" style="flex:1.4"><img src="img/activity_uc03.png" alt="Activity Diagram UC-03"></div>
+    <div class="col" style="flex:1">
+      <div class="card">
+        <h3>Alur utama</h3>
+        <ul>
+          <li>Mulai &rarr; pilih tiket &rarr; isi hasil diagnosis.</li>
+          <li>Keputusan <b>stok tersedia?</b> &rarr; ambil tarif &amp; stok, atau tampilkan stok cabang lain (UC-08).</li>
+          <li>Hitung estimasi &rarr; kirim notifikasi ke pelanggan (UC-12).</li>
+          <li>Catat log &amp; konfirmasi ke teknisi &rarr; selesai.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 10 RENCANA IMPLEMENTASI - TEKNOLOGI -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB VI</span><h2>Rencana Implementasi: Teknologi</h2></div>
+  <table>
+    <tr><th style="width:250px">Komponen</th><th style="width:330px">Teknologi</th><th>Alasan</th></tr>
+    <tr><td>Bahasa pemrograman</td><td>JavaScript (Node.js 20)</td><td>Mendukung proses asynchronous (notifikasi &amp; integrasi API).</td></tr>
+    <tr><td>Framework backend</td><td>Express.js 4</td><td>Ringan, cocok untuk REST API &amp; routing.</td></tr>
+    <tr><td>Antarmuka</td><td>HTML5, Bootstrap 5, EJS</td><td>Responsif di komputer &amp; ponsel (NFR-05).</td></tr>
+    <tr><td>Basis data</td><td>MySQL 8</td><td>13 entitas relasional &amp; konsistensi transaksi (NFR-07).</td></tr>
+    <tr><td>Alat UML</td><td>StarUML, Draw.io</td><td>Menggambar use case, class, dan sequence diagram.</td></tr>
+    <tr><td>Kendali versi</td><td>Git &amp; GitHub</td><td>Kolaborasi tim dan pengumpulan tugas.</td></tr>
+    <tr><td>Notifikasi</td><td>Nodemailer, WhatsApp API</td><td>Mengirim notifikasi estimasi &amp; status (FR-09).</td></tr>
+  </table>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 11 ARSITEKTUR & PEMETAAN -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB VI</span><h2>Arsitektur &amp; Pemetaan Class &rarr; Kode</h2></div>
+  <div class="cols">
+    <div class="col card">
+      <h3>Arsitektur 3-lapis + MVC</h3>
+      <ul>
+        <li><b>Presentasi:</b> browser, EJS + Bootstrap.</li>
+        <li><b>Aplikasi:</b> Express.js (controller, service).</li>
+        <li><b>Data:</b> MySQL via model.</li>
+      </ul>
+      <p>Model = <code>src/models</code> &middot; View = <code>src/views</code> &middot; Controller = <code>src/controllers</code>.</p>
+    </div>
+    <div class="col card">
+      <h3>13 class &rarr; 13 model</h3>
+      <p>Pengguna, Pelanggan, Cabang, Perangkat, TiketServis, Teknisi, Estimasi, SukuCadang, Stok, Pembayaran, Garansi, Pemasok, PesananPembelian masing-masing menjadi satu berkas <code>*.model.js</code>.</p>
+      <p>Skema basis data tersedia pada <code>database/schema.sql</code> (13 tabel).</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <p><b>Alur UC-03 di kode:</b> route &rarr; <code>estimasiController</code> &rarr; <code>estimasiService</code> (cek stok + hitungTotal) &rarr; <code>estimasi.model</code> &rarr; <code>notifikasiService</code> (async).</p>
+  </div>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 12 PEMBAGIAN TUGAS -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB VI</span><h2>Pembagian Tugas Antar Anggota</h2></div>
+  <table>
+    <tr><th style="width:340px">Anggota (NIM)</th><th style="width:210px">Bagian</th><th>Tanggung jawab utama</th></tr>
+    <tr><td>Aninda Rizqi Amelia (60124009)</td><td>Use Case</td><td>Use case diagram, use case specification UC-03, activity diagram (BAB III).</td></tr>
+    <tr><td>Sifa Sabrina (60124023)</td><td>SRS</td><td>Kebutuhan fungsional &amp; non-fungsional, aktor, batasan, asumsi (BAB II).</td></tr>
+    <tr><td>Maheswari Pasa Putri Syamsudar (60124010)</td><td>Class Diagram</td><td>Class, atribut &amp; method, relasi antar-class, dan multiplicity (BAB IV).</td></tr>
+    <tr><td>Hasan (60124013)</td><td>Sequence Diagram</td><td>Interaksi UC-03, lifeline, pesan, combined fragment (BAB V).</td></tr>
+    <tr><td>Seluruh anggota</td><td>Studi kasus, rencana, pengujian</td><td>BAB I, VI, VII, kode program, pengujian, dan latihan presentasi.</td></tr>
+  </table>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 13 PENGUJIAN & TAHAPAN -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB VI</span><h2>Rencana Pengujian &amp; Tahapan</h2></div>
+  <div class="cols">
+    <div class="col">
+      <table>
+        <tr><th style="width:150px">Jenis</th><th>Metode &amp; sasaran</th></tr>
+        <tr><td>Unit test</td><td>Jest &mdash; hitungTotal() &amp; pengurangan stok.</td></tr>
+        <tr><td>Integration</td><td>Postman &mdash; endpoint diagnosis &amp; kirim estimasi.</td></tr>
+        <tr><td>Black box</td><td>Skenario UC-03 (utama + 8 alternatif).</td></tr>
+        <tr><td>UAT</td><td>Wawancara pengguna (NFR-04).</td></tr>
+      </table>
+    </div>
+    <div class="col card">
+      <h3>Tahapan 4 minggu</h3>
+      <ul>
+        <li><b>M1:</b> lingkungan, schema.sql, otentikasi &amp; hak akses.</li>
+        <li><b>M2:</b> tiket servis &amp; diagnosis (UC-01, UC-03).</li>
+        <li><b>M3:</b> estimasi, stok, notifikasi (UC-03/05/06/12).</li>
+        <li><b>M4:</b> pembayaran, garansi, dashboard, uji &amp; presentasi.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 14 KESIMPULAN -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB VII</span><h2>Kesimpulan</h2></div>
+  <ul>
+    <li>Sistem terpusat dirancang untuk mengatasi pencatatan servis manual dan sengketa estimasi di TechFix Semarang.</li>
+    <li>SRS memuat <b>12 kebutuhan fungsional</b> dan <b>9 kebutuhan non-fungsional</b> beserta target keberhasilan yang terukur.</li>
+    <li>Pemodelan fungsional menghasilkan <b>9 aktor</b> dan <b>17 use case</b>; UC-03 dipilih sebagai studi kasus utama.</li>
+    <li>Class Diagram memuat <b>13 class</b> dan <b>16 relasi</b> dengan jenis hubungan dan multiplicity yang jelas.</li>
+    <li>Sequence Diagram UC-03 menunjukkan interaksi objek dari pengambilan tarif dan stok hingga notifikasi ke pelanggan.</li>
+    <li>Activity Diagram UC-03 melengkapi pemodelan dengan menggambarkan alur keputusan ketersediaan stok secara visual.</li>
+    <li>Rencana implementasi memetakan setiap class menjadi model pada aplikasi Node.js + Express + MySQL.</li>
+  </ul>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 15 SARAN -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB VII</span><h2>Saran</h2></div>
+  <ul>
+    <li>Activity Diagram sudah dibuat untuk UC-03; sebaiknya dilanjutkan untuk use case berisiko lain (UC-04, UC-09).</li>
+    <li>Membuat Sequence Diagram untuk use case berisiko lain (UC-04 persetujuan estimasi, UC-09 pembayaran).</li>
+    <li>Melakukan pengujian <b>black box</b> dan <b>white box</b> secara menyeluruh.</li>
+    <li>Memperkuat keamanan: hashing kata sandi dan RBAC pada seluruh bagian sistem.</li>
+    <li>Melengkapi dokumen dengan daftar gambar dan daftar tabel selain Daftar Isi yang sudah ada.</li>
+  </ul>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 16 PENUTUP -->
+<section class="slide cover">
+  <div class="inner" style="justify-content:center; text-align:center; align-items:center;">
+    <h1 style="margin-top:0">Terima Kasih</h1>
+    <div class="sub">Kelompok 8 &mdash; Sistem Manajemen Servis Gadget TechFix</div>
+    <div class="members" style="justify-content:center">
+      <div class="m"><b>Aninda Rizqi Amelia</b><i>60124009</i></div>
+      <div class="m"><b>Maheswari Pasa Putri Syamsudar</b><i>60124010</i></div>
+      <div class="m"><b>Hasan</b><i>60124013</i></div>
+      <div class="m"><b>Sifa Sabrina</b><i>60124023</i></div>
+    </div>
+    <div class="bottom" style="border:0">Kami terbuka untuk pertanyaan dan masukan.</div>
+  </div>
+</section>
+
+</body>
+</html>
