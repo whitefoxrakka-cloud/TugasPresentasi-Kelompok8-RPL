@@ -44,7 +44,7 @@ Semua temuan pada `Laporan_Konsistensi.md` **sudah diperbaiki** di `RPL.docx` /
 
 1. ✅ Nama folder sudah sesuai aturan pengumpulan (`TugasPresentasi_Kelompok8`).
 2. ✅ Nama anggota & pembagian tugas (BAB VI 6.4) sudah disesuaikan dengan Kelompok 8.
-3. ⏳ Unggah ke repositori GitHub kelompok dan cantumkan tautannya pada slide (sedang diproses).
+3. ✅ Repositori GitHub kelompok sudah diunggah; tautannya tercantum di slide (cover & penutup).
 
 ## Anggota & pembagian tugas (Kelompok 8)
 
@@ -57,7 +57,7 @@ Semua temuan pada `Laporan_Konsistensi.md` **sudah diperbaiki** di `RPL.docx` /
 
 ## Repositori GitHub
 
-🔗 <https://github.com/> *(tautan akan dilengkapi setelah repositori diunggah)*
+🔗 **<https://github.com/whitefoxrakka-cloud/TugasPresentasi-Kelompok8-RPL>**
 
 ---
 
