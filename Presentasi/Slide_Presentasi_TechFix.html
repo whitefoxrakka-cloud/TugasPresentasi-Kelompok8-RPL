@@ -245,15 +245,83 @@
 <section class="slide">
   <div class="s-head"><span class="kicker">BAB IV</span><h2>Class Diagram</h2></div>
   <div class="cols" style="height:500px">
-    <div class="col imgwrap" style="flex:1.2"><img src="img/image3.jpeg" alt="Class Diagram"></div>
+    <div class="col imgwrap" style="flex:1.35"><img src="img/image3.jpeg" alt="Class Diagram TechFix"></div>
     <div class="col" style="flex:1">
-      <div class="stats" style="flex-direction:column">
-        <div class="stat"><div class="n">13</div><div class="l">Class</div></div>
-        <div class="stat alt"><div class="n">16</div><div class="l">Relasi antar-class</div></div>
-      </div>
+      <p class="lead" style="font-size:19px">Rancangan sistem servis gadget TechFix Semarang terdiri dari <b>13 class</b>. Setiap class punya tugas berbeda, tetapi tetap terhubung untuk mendukung kegiatan servis sehari-hari.</p>
       <div class="card">
-        <h3>Jenis hubungan</h3>
-        <p><b>Generalization</b> (Pengguna&rarr;Pelanggan, Pengguna&rarr;Teknisi) &middot; <b>Association</b> &middot; <b>Aggregation</b> (Cabang&ndash;Stok, Cabang&ndash;Teknisi) &middot; <b>Composition</b> (TiketServis&ndash;Estimasi, Perangkat&ndash;Garansi).</p>
+        <h3>Cakupan perancangan</h3>
+        <ul style="padding-left:20px">
+          <li>Data pelanggan dan perangkat yang diservis</li>
+          <li>Tiket servis serta keluhan pelanggan</li>
+          <li>Teknisi yang mengerjakan perangkat</li>
+          <li>Estimasi biaya dan pembayaran</li>
+          <li>Garansi dan stok suku cadang</li>
+        </ul>
+      </div>
+      <p class="muted" style="font-size:16.5px; margin-bottom:0">Seluruh bagian dirancang agar proses servis di kedua cabang bisa dikelola dalam satu sistem.</p>
+    </div>
+  </div>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 8b CLASS DIAGRAM - ATRIBUT, METHOD & RELASI -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB IV</span><h2>Atribut, Method, dan Relasi Antar-Class</h2></div>
+  <div class="cols">
+    <div class="col" style="flex:1.15">
+      <div class="card" style="height:100%">
+        <h3>Atribut dan Method</h3>
+        <p>Atribut dipakai untuk menyimpan data, sedangkan method berisi fungsi yang dijalankan saat proses servis.</p>
+        <table>
+          <tr><th style="width:150px">Class</th><th>Isi utama</th></tr>
+          <tr><td>Pelanggan</td><td>Identitas pelanggan, melihat status servis, menyetujui estimasi biaya, dan mengajukan klaim garansi.</td></tr>
+          <tr><td>Teknisi</td><td>Melakukan diagnosis perangkat, membuat estimasi biaya, dan mencatat pemakaian suku cadang.</td></tr>
+          <tr><td>TiketServis</td><td>Data tiket, keluhan pelanggan, dan perkembangan pengerjaan servis.</td></tr>
+          <tr><td>Pembayaran</td><td>Transaksi dan informasi bukti pembayaran.</td></tr>
+          <tr><td>Stok</td><td>Persediaan suku cadang, termasuk barang masuk dan barang keluar.</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="col" style="flex:1">
+      <div class="card" style="height:100%">
+        <h3>Relasi Antar-Class</h3>
+        <p>Relasi memperlihatkan cara setiap class saling berhubungan di dalam sistem.</p>
+        <table>
+          <tr><th style="width:140px">Jenis</th><th>Penjelasan</th></tr>
+          <tr><td>Generalization</td><td>Pewarisan sifat dari class induk (Pengguna ke Pelanggan dan Teknisi).</td></tr>
+          <tr><td>Association</td><td>Hubungan umum antara dua class.</td></tr>
+          <tr><td>Composition</td><td>Kepemilikan kuat, bagian tidak bisa lepas dari pemiliknya.</td></tr>
+          <tr><td>Aggregation</td><td>Hubungan keseluruhan dan bagian, tetapi bagiannya masih bisa berdiri sendiri.</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>Kelompok 8 &mdash; TechFix</span><span>Rekayasa Perangkat Lunak</span></div>
+</section>
+
+<!-- 8c CLASS DIAGRAM - MULTIPLICITY & PENERAPAN -->
+<section class="slide">
+  <div class="s-head"><span class="kicker">BAB IV</span><h2>Multiplicity dan Penerapan Sistem</h2></div>
+  <div class="cols">
+    <div class="col" style="flex:1.05">
+      <div class="card" style="height:100%">
+        <h3>Multiplicity</h3>
+        <p>Multiplicity menjelaskan berapa banyak objek yang bisa terlibat dalam suatu hubungan antarclass. Simbol ini membantu menentukan hubungan data agar sesuai dengan kebutuhan sistem.</p>
+        <table>
+          <tr><th style="width:110px">Simbol</th><th>Arti</th></tr>
+          <tr><td><b>1</b></td><td>Harus ada tepat satu objek.</td></tr>
+          <tr><td><b>0..1</b></td><td>Bisa tidak ada atau hanya satu objek.</td></tr>
+          <tr><td><b>1..*</b></td><td>Harus ada satu objek atau lebih.</td></tr>
+          <tr><td><b>0..*</b></td><td>Bisa tidak ada atau terdiri dari banyak objek.</td></tr>
+        </table>
+        <p style="margin-bottom:0">Contohnya, satu pelanggan bisa memiliki beberapa tiket servis. Satu perangkat juga bisa diservis berkali-kali sehingga riwayat perbaikannya tersimpan. Sementara itu, satu cabang dapat mengelola banyak jenis stok suku cadang.</p>
+      </div>
+    </div>
+    <div class="col" style="flex:1">
+      <div class="card" style="height:100%">
+        <h3>Penerapan Sistem</h3>
+        <p>Rancangan class diagram ini menjadi acuan saat membangun sistem servis TechFix Semarang. Proses yang didukung mulai dari penerimaan perangkat, pemeriksaan oleh teknisi, penyampaian estimasi biaya, pembayaran, sampai pengelolaan garansi dan stok suku cadang.</p>
+        <p style="margin-bottom:0">Dengan sistem yang terintegrasi, pencatatan servis menjadi lebih rapi dan status perbaikan lebih mudah dipantau. Pengelolaan data dari kedua cabang juga lebih teratur sehingga pekerjaan karyawan menjadi lebih ringan.</p>
       </div>
     </div>
   </div>
